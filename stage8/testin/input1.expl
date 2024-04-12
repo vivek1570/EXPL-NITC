@@ -1,0 +1,72 @@
+type Complex{
+	int real;
+    int imaginary;
+}
+
+endtype
+
+
+decl
+	Complex c1, c2, c;
+	Complex sum(Complex c1, Complex c2);
+	int show(Complex c);
+enddecl
+
+
+Complex sum(Complex c1, Complex c2){
+	decl
+		Complex c;
+	enddecl
+	begin
+		c = alloc();
+		c.real = c1.real + c2.real;
+		c.imaginary = c1.imaginary + c2.imaginary;
+        write(c.real);
+        write(c.imaginary);
+		return c;
+	end
+
+}
+
+int show(Complex c){
+decl
+enddecl
+begin
+write(c.real);
+write(" +");
+write(c.imaginary);
+write("i");
+return 1;
+end
+
+}
+
+int main(){
+decl
+	int temp, a, b, d;
+enddecl
+
+begin
+temp=initialize();
+read(a);
+read(b);
+read(d);
+
+c1 = alloc();
+c2 = alloc();
+c = alloc();
+c1.real = a;
+c2.real=23;
+c1.imaginary = b;
+c2.imaginary = d;
+
+
+c = sum(c1, c2);
+
+temp = initialize();
+temp = show(c);
+
+return 0;
+end
+
+}

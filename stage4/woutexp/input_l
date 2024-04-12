@@ -1,0 +1,10 @@
+decl
+    int num[5];
+    int a;
+enddecl
+
+begin
+    a=1;
+    num[0]=2;
+    write(num[a-1]);
+end;

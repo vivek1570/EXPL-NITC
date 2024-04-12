@@ -1,0 +1,37 @@
+type
+  node
+  {
+    int d;
+    int s;
+    int t;
+  }
+  List
+  {
+    int a;
+    int b;
+    node g;
+    List next;
+  }
+endtype
+decl
+  node y,z;
+  List head;
+enddecl
+
+
+int main()
+{
+  decl
+    int a,b,c;
+    node res;
+  enddecl
+
+  begin
+    c = initialize();
+    head=alloc();
+    head.g=alloc();
+    head.g.d=23;
+    write(head.g.d);
+    return 0;
+  end
+}

@@ -1,0 +1,63 @@
+type Complex{
+	int real, imaginary;
+}
+
+endtype
+
+
+decl
+	Complex f1, f2, f;
+	Complex sum(Complex f1, Complex f2);
+	Complex show(Complex f);
+end decl
+
+
+Complex sum(Complex n1, Complex n2){
+	decl
+		Complex f;
+	enddecl
+	
+	f = alloc();
+	f3.real = f1.real + f2.real;
+	f3.imaginary = f1.imaginary + f2.imaginary;
+	
+	return f3;
+
+}
+
+int show(Fraction f){
+
+write(f.numerator);
+write("+")
+write(f.denominator);
+write("i");
+
+}
+
+int main(){
+decl
+	int temp, a, b, c, d;
+enddecl
+begin
+read(a);
+read(b);
+read(c);
+read(d);
+
+f1 = alloc();
+f2 = alloc();
+f = alloc();
+f1.real = a;
+f1.imaginary = b;
+f2.real = c;
+f2.imaginary = d;
+
+f = sum(f1, f2);
+
+temp = initialize();
+temp = show(f);
+
+return 0;
+end
+
+}

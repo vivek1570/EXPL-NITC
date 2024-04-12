@@ -1,0 +1,203 @@
+type
+link
+{
+    int data;
+    str stri;
+    link  next;
+}
+endtype
+class A{
+    decl
+    int a;
+    int b;
+    link head;
+    int func_A1(int x,int y);
+    int func_A2();
+    enddecl
+    int func_A1(int x,int y)
+    {
+        begin
+        return x+y;
+        end
+    }
+    int func_A2()
+    {
+        begin
+        self.a=12;
+        return 1;
+        end
+    }
+}
+B extends A
+{
+    decl
+    str e;
+    link tail;
+    int func_A1(int x1,int y1);
+    int func_B2(int x2);
+    enddecl
+    int func_A1(int x1,int y1)
+    {
+        begin
+        return x1-y1;
+        end
+    }
+    int func_B2(int x2)
+    {
+        begin
+        return x2+10;
+        end
+    }
+}
+D{
+    decl
+    int func_D1(int d1);
+    enddecl
+    int func_D1(int d1)
+    {
+        begin
+        return 2;
+        end
+    }
+}
+E{
+    decl
+    enddecl
+}
+C extends B
+{
+    decl
+    enddecl
+}
+endclass
+decl
+A obj;
+B obj1;
+int genFunc(int g1,int g2);
+enddecl
+int genFunc(int g1,int g2)
+{
+    begin
+    return 12;
+    end
+}
+int main()
+{
+    decl
+    int n;
+    enddecl
+    begin
+    n = initialize();
+    obj1=new(B);
+    read(n);
+    if(n==0) then
+    obj=new(C);
+    endif;
+    n=obj.func_A2(1,2);
+    return 1;
+    end
+}
+
+
+
+
+
+
+
+-------------------------------------------
+
+
+
+class
+A
+{
+  decl
+    int f0();
+    int f1();
+  enddecl
+  int f0() {                  
+      begin
+       write("In class A f0");
+       return 1;
+      end
+  }
+  int f1() {                   
+      begin
+        write("In class A f1");
+        return 1;
+      end
+  }
+}                       
+B extends A
+{
+  decl
+    int f0();
+    int f2();
+  enddecl
+int f0() {                   
+     begin
+       write("In class B f0");
+       return 1;
+     end
+}
+int f2() {                   
+     begin
+       write("In class B f2");
+       return 1;
+     end
+}
+
+}                       
+C extends B
+{
+  decl
+    int f0();
+    int f2();
+    int f4();
+  enddecl
+int f0() {               
+     begin
+       write("In class C f0");
+       return 1;
+     end
+}
+int f2() {                
+    begin
+       write("In class C f2");
+       return 1;
+    end
+}
+int f4() {                
+    begin
+       write("In class C f4");
+       return 1;
+    end
+}
+}                       
+endclass
+decl
+    A obj ;
+enddecl
+
+int main() {
+  decl
+    int temp,n;
+  enddecl
+  begin
+    temp= initialize();
+    read(n);
+    if(n < 0)then
+        obj = new(A);
+    else
+        if(n == 0)then
+            obj = new(B);
+        else
+            if(n > 0)then
+                obj = new(C);
+            endif;
+       endif;
+    endif;
+   write(obj.f0());            
+    return 1;
+  end
+}

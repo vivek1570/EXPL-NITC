@@ -1,0 +1,18 @@
+stage info:
+1.We parse an arithemetic sequence and make a expression tree using lex and yacc
+2.Recursvly traverse the tree and produce the assembly langauge code
+
+XSM virtual machine is model on a os which has a unprivilaged usermode operations can do 
+so it assigns a some space for registers and a virtual space for the machine
+
+EXPL transalte the souce program and generate the target machine ->executbale program to load module of the target OS.
+
+Compiler needs following for generating the executable file:
+1.Virtual machine model and instruction set  of the target machine
+
+2.Virtual machine address avialble for the target program   , code data stack heap
+
+3.the format for the target file  Compiler passes info about the executable file by the header.
+
+4.Interface to OS kernel routines.
+
